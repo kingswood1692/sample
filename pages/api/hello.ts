@@ -5,7 +5,8 @@ import dbConnect from "src/lib/dbConnect";
 import Sites from "src/models/Sites";
 
 type Data = {
-  name: string
+  success: boolean,
+  data?: any
 }
 
 export default async function handler(
