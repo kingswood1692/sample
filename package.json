@@ -1,5 +1,5 @@
 {
-  "name": "public_html",
+  "name": "iona-psi",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,13 +9,33 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.0.1",
+    "@mui/lab": "^5.0.0-alpha.50",
+    "@mui/material": "^5.0.2",
+    "bottlejs": "^2.0.0",
+    "connected-react-router": "^6.9.1",
+    "eslint-plugin-react-hooks": "^4.2.1-alpha-6ecad79cc-20211006",
+    "history": "^5.0.1",
+    "mongoose": "^6.0.8",
     "next": "11.1.2",
+    "psi": "^4.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.5",
+    "react-transition-group": "^4.4.2",
+    "react-xml-parser": "^1.1.8",
+    "redux": "^4.1.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "sass": "^1.42.1",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "@types/react": "17.0.28",
-    "eslint": "8.0.0",
+    "@types/react": "17.0.25",
+    "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "typescript": "4.4.3"
   }
