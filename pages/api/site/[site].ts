@@ -2,7 +2,7 @@ import dbConnect from "src/lib/dbConnect";
 import PageInsights from "src/models/PageInsights";
 import Sites from "src/models/Sites";
 
-export default async function handler(req, res) {
+export default async function handler(req: any, res: any) {
   const { method } = req;
   const { site } = req.query;
 
@@ -17,7 +17,9 @@ export default async function handler(req, res) {
 
         const getSitePsiResults = await PageInsights.find({
           siteId: getSiteDetails[0]._id,
-        }).sort({created_at: 'desc'}).lean();
+        })
+          .sort({ created_at: "desc" })
+          .lean();
         res
           .status(200)
           .json({ success: true, data: { getSitePsiResults, getSiteDetails } });

@@ -2,7 +2,7 @@ import dbConnect from "../../src/lib/dbConnect";
 import PageInsights from "../../src/models/PageInsights";
 import PsiProvider from "src/services/psiProvider";
 
-export default async function handler(req, res) {
+export default async function handler(req: any, res: any) {
   const { method } = req;
 
   await dbConnect();
