@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import dbConnect from "src/lib/dbConnect";
+import Sites from "src/models/Sites";
 
 const Home: NextPage = (props) => {
   console.log(props);
@@ -70,22 +72,14 @@ const Home: NextPage = (props) => {
   );
 };
 
-export async function getStaticProps(ctx) {
-  // get the current environment
-  let dev = process.env.NODE_ENV !== "production";
-  let { DEV_URL, PROD_URL } = process.env;
+/* Retrieves pet(s) data from mongodb database */
+export async function getServerSideProps() {
+  await dbConnect();
 
-  // request posts from api
-  let response = await fetch(`${dev ? DEV_URL : PROD_URL}/api/hello`);
-  console.log(response);
-  // extract the data
-  let data = await response.json();
-
-  return {
-    props: {
-      sites: data,
-    },
-  };
+  /* find all the data in our database */
+  const result = await Sites.find({}).lean();
+  console.log(result)
+  return { props: { result: JSON.stringify(result) } };
 }
 
 export default Home;

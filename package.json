@@ -31,6 +31,7 @@
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "sass": "^1.42.1",
+    "swr": "^1.0.1",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
